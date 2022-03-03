@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import Signup from "./Signup";
+import Login from './Login'
+import './app.css'
+import React from "react";
 
 function App() {
+  const [isSignup,setisSignup] = React.useState(true)
+  const change = () =>{
+    setisSignup(!isSignup)
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+    
+
+      {isSignup? <Signup change={change} />:  <Login change={change} />}
     </div>
   );
 }
